@@ -1,0 +1,177 @@
+-Intro to React.
+
+What is React?
+A Javascript library for building user interfaces.
+
+Why should I use React?
+* Easier to use 
+* Maintainable
+* Scalable
+* Most popular frontend framework
+
+
+-REUSABLE COMPONENTS
+Why use reusable components?
+* Components help reduce code duplication.
+* Help make our code so much cleaner.
+
+Two parts to components: 
+
+* Creating a component
+* Using a component
+
+Creating a component
+
+1. Create a new file
+"Todo.jsx"
+
+2.Inside of this file create a function
+function Todo()
+
+3. Inside of your function, return some JSX
+function Todo {
+    return <div>Finish Frontend Simplified</div>
+}
+
+4. Export your function
+export default Todo
+
+Using a component
+
+1. Import a file
+import Todo from "./components/Todo.jsx"
+
+2. Use the component
+<Todo />
+
+- PROPS
+
+What are props?
+Props make components dynamic.
+
+REACT COMPONENTS
+Two parts to props?
+
+* Creating props
+* Using props
+
+CREATING PROPS
+
+How to create a prop.
+
+*pass in the property name and value
+<Todo propName="Prop Value">
+
+USING PROPS
+
+How to use a prop
+
+* accept a prop in parameter
+function Todo({ propName }) {
+    ...
+}
+
+* Use props
+function Todo({ propName }) {
+    return <div>{propName}</div>
+}
+
+CREATING MULTIPLE PROPERTIES
+How to create multiple props
+
+* Pass in the property name and value
+<Todo propName="Prop Value" propTwo="Second Prop Value"/>
+
+USING PROPS
+
+How to use multiple props
+
+* Accept props in parameter
+function Todo({ propName, propTwo }) {
+    ...
+}
+
+* Use props
+function Todo({ propName, propTwo }) {
+    return <div>{propName} {propTwo}</div>
+}
+
+PARENT
+
+<MyComponent test="Testing" />
+
+CHILD
+
+function MyComponent({ test }) {
+    return <div>{ test }</div>
+}
+
+OUTPUT
+
+Testing
+
+EVENT HANDLERS
+
+What are event handlers?
+* Code that executes when an event occurs.
+
+Most important event handlers.
+* onClick
+* onChange
+
+REACT HOOKS
+
+There are multiple react hooks, but the most important ones are 
+
+* useState
+* useEffect
+
+- useState 
+* is how we define variables in React
+
+CONDITIONAL RENDERING
+
+What is a conditional rendering?
+* Rendering a component when a certain condition is met.
+
+/1. Use a callback to get the previous value
+2. Spread out all the properties of the prev state
+3. Only change the property that you need to change
+
+* Numbers 
+- setNum(10)
+- setNum(prevNum => prevNum + 10)
+
+* Booleans 
+- setBool(true)
+- setBool(prevBool => !prevBool)
+
+* Strings
+- setStr('Hello World')
+- setStr(prevStr => prevStr + 'Simplified')
+
+* OBJECTS
+- setObj(newObj)
+- setObj(prevObj => ({ ...prevObj,quantity:prevObj.quantity + 1 }))
+
+* ARRAYS
+- setArr(newArr)
+- setArr(prevArr => ([ ...prevArr, 5 ]))
+
+PARENT 
+function Parent(){
+    fucntion clicked() {
+        console.log('Parent notified!')
+    }
+
+    return (
+        <Child clicked={clicked} />
+    );
+}
+
+CHILD
+fucntion Child({ clicked }) {
+    return (
+        <button onClick={clicked}>Child Button</button>
+    )
+}
